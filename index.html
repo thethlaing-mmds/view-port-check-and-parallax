@@ -12,9 +12,14 @@
             height: 150vh;
         }
 
-        #firstDiv h2{
+        #firstDiv #parallax{
             position: absolute;
-            transform: translate(500px, 300px);
+            transform: translate(300px, 500px);
+        }
+
+        #firstDiv #parallax2{
+            position: absolute;
+            transform: translate(600px, 500px);
         }
 
         div {
@@ -37,7 +42,8 @@
 
 <body>
     <div id="firstDiv">
-        <h2 id="parallax" style="position: absolute;">Parallax element</h3>
+        <h2 id="parallax" style="position: absolute;">Parallax element</h2>
+        <h2 id="parallax2" style="position: absolute;">Parallax element</h3>
     </div>
 
     <div id="secondDiv">
@@ -71,9 +77,10 @@
             /*Paralexing an item*/
             const scrolled = window.pageYOffset;
             const parallaxEle = document.querySelector("#parallax");
-            parallaxEle.style.left =  scrolled * .2 + "px";
+            parallaxEle.style.left =  -scrolled * .2 + "px";
 
-
+            const parallaxEle2 = document.querySelector("#parallax2");
+            parallaxEle2.style.left =  scrolled * .25 + "px";
 
         });
     </script>
